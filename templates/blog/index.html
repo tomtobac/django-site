@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-
-<body>
+{% extends "main/index.html" %}
+{% block title %}Blog{% endblock %}
+{% block content %}
     <h1>Hello @blog</h1>
     <a href="{% url 'home' %}">goto home</a>
     {% for post in posts %}
@@ -24,6 +16,4 @@
     {% empty %}
     <h2>there are not posts here</h2>
     {% endfor %}
-</body>
-
-</html>
+{% endblock %}
