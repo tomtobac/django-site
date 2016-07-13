@@ -1,0 +1,14 @@
+img {
+  margin-right: 2em;
+}
+.icons{
+	display: block;
+	margin: 0 auto;
+	width: 200px;
+	text-align:center;
+}
+
+.icons img{
+	float: left;
+	margin-right: 1em;
+}

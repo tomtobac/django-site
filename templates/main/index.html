@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-  <title>{% block title %}Index{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> {% load staticfiles %}
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="https://fonts.google.com/specimen/Roboto?selection.family=Roboto" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/global.css' %}"> {% block css %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">{% endblock %}
+    <title>{% block title %}Index{% endblock %}</title>
 </head>
+
 <body>
-  <div class="container">
-  {% block content %}
-    <h1>hi @mysite</h1>
-    <a href="/blog/">goto blog</a>
-  {% endblock %}
-  </div>
+    <div class="container">
+        <a href="{% url 'home' %}">aboutme</a>
+        <span>|</span>
+        <a href="{% url 'blog' %}">blog</a>
+        <span>|</span>
+        <a href="#">contact</a> {% block content %}
+        <h1>hi @mysite</h1>
+        <div class="row">
+            <img src="{% static 'img/profile.gif' %}" class="img-thumbnail pull-left" alt="profile picture" width="200" height="400">
+            <h3>Curabitur mattis diam ac sagittis.</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vulputate facilisis ante at tincidunt. In erat odio, malesuada in mi et, accumsan ullamcorper justo. Maecenas ullamcorper, quam consequat porta elementum, nunc erat congue diam, sollicitudin
+                iaculis metus orci at mauris. Aliquam eu odio risus. Maecenas dolor ipsum, tincidunt in sem a, lacinia pharetra mi. In congue erat sed ex pellentesque, nec volutpat nisl molestie. Sed faucibus eros ac erat ultricies iaculis. Proin tempor
+                a quam eu mollis.<br> Nulla fermentum nunc vitae consequat rutrum. Ut dictum semper sagittis. Praesent a sem id ex ultrices tempus. Phasellus a gravida leo. Aenean at hendrerit mauris. Duis eleifend nunc magna, non placerat dolor varius a.
+                Pellentesque mollis augue id ipsum ultrices aliquet. Morbi rhoncus tortor nulla, vulputate malesuada dui ultrices quis.
+            </p>
+        </div>
+        <div class="row">
+            <div class="icons">
+                <a href="#"><img src="{% static 'img/github-logo.svg' %}" class="img-responsive center-block" alt="github" width="40" height="40" /></a>
+                <a href="#"><img src="{% static 'img/linkedin-logo-button.svg' %}" class="img-responsive center-block" alt="github" width="40" height="40" /></a>
+                <a href="#"><img src="{% static 'img/twitter-logo-button.svg' %}" class="img-responsive center-block" alt="github" width="40" height="40" /></a>
+            </div>
+        </div>
+        {% endblock %}
+    </div>
 </body>
+
 </html>
