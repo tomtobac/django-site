@@ -1,0 +1,15 @@
+{% extends 'main/index.html' %}
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+<h1>Contact</h1>
+{% if send %}
+  <h3>Message send successful</h3>
+{% else %}
+  <form role="form" action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+  </form>
+{% endif %}
+{% endblock %}

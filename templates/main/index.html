@@ -19,7 +19,8 @@
         <span>|</span>
         <a href="{% url 'blog' %}">blog</a>
         <span>|</span>
-        <a href="#">contact</a> {% block content %}
+        <a href="{% url 'contact' %}">contact</a>
+        {% block content %}
         <h1>hi @mysite</h1>
         <div class="row">
             <img src="{% static 'img/profile.gif' %}" class="img-thumbnail pull-left" alt="profile picture" width="200" height="400">
